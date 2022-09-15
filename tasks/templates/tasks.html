@@ -20,7 +20,7 @@
                             <p class="card-body text-secondary">{{task.descrition}}</p>
                             <div class="d-flex justify-content-center text-center card-footer p-0 text-muted">
                                 <div class="me-auto p-2"><p class="m-0">{{task.user.username}}</p></div>
-                                <div class="p-2"><p class="m-0">{{task.datecompleted|date:'j M Y:i'}}</p></h4></div>
+                                <div class="p-2"><p class="m-0">{{task.datecompleted|date:'j M Y g:i'}}</p></h4></div>
                             </div>
                         {% comment %} </button> {% endcomment %}
                     </a>
