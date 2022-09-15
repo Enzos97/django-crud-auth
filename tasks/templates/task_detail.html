@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container">
+    <div class="row justify-content-center mt-2">
+        <div class="col-md-6 align-self-center">
+            <h1>{{task.title}}</h1>
+            {{error}}
+            <div class="card text-bg-dark mb-3 text-center">
+                <form method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <p>
+                        {{ field.label_tag }}<br />
+                        {{ field }}
+                    </p>
+                    {% endfor %}
+                    <button class="btn btn-secondary col-md-5 align-self-center mb-2">
+                        Update
+                    </button>
+                </form>
+                <form action="{% url 'complete_task' task.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-secondary col-md-5 align-self-center mb-2">
+                        complete
+                    </button>
+                </form>
+                <form action="{% url 'delete_task' task.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-secondary col-md-5 align-self-center mb-2">
+                        delete
+                    </button>
+                </form>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+

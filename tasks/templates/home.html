@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main class="container py-5">
+    <section class="card">
+        <div class="card-header">
+            <h1 class="display-4 text-center">Django - CRUD - Auth</h1>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title text-center">CRUD-APP</h5>
+            <p class="card-text text-center">Hello everyone. This application will allow you to have a list of your own tasks, where you can classify them as important and you can list them as completed when you have done them. I invite you to register or log in so you can start your list.</p>
+            {% if not user.is_authenticated %}
+            <div class="text-center">
+                <a href="/signup/" class="btn btn-dark">Signup</a>
+                <a href="/signin/" class="btn btn-dark">Login</a>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+  </main>
+{% endblock %}
